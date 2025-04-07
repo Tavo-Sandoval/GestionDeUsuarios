@@ -1,14 +1,11 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useSession } from 'next-auth/react'
-
-const { data: session } = useSession()
-
-console.log(session?.user?.role) //  aquí tienes el rol
 
 export default function Auth() {
   const { data: session } = useSession();
+
+  console.log(session?.user?.role); // Aquí tienes el rol
 
   return (
     <div>

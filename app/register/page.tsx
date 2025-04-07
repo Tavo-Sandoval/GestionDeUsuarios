@@ -18,7 +18,7 @@ export default function Home() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
 
@@ -37,7 +37,8 @@ export default function Home() {
 
       setMessage('✅ Usuario registrado exitosamente')
       setForm({ name: '', email: '', password: '' })
-    } catch (error: any) {
+    } catch (err) {
+      const error = err as Error
       setMessage('❌ ' + error.message)
     } finally {
       setLoading(false)

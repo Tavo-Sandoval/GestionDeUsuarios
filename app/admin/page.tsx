@@ -1,20 +1,7 @@
 'use client'
 
 import { signOut } from "next-auth/react"
-import { useSession } from 'next-auth/react'
-import { Session } from 'next-auth'
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      name?: string | null
-      email?: string | null
-      image?: string | null
-      role?: string | null
-    }
-  }
-}         
+
 export default function AdminPage() {
   return (
     <div className="p-4">
@@ -28,3 +15,4 @@ export default function AdminPage() {
     </div>
   )
 }
+
