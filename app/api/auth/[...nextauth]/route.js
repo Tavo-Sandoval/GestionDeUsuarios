@@ -35,7 +35,7 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async session({ session, token, user }) {
+    async session({ session, token}) {
       if (session.user) {
         session.user.role = token.role // pasar rol desde token
       }
